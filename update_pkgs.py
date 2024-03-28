@@ -62,4 +62,9 @@ if __name__ == "__main__":
     homepage = 'https://github.com/astariul/private-hello'
     execute_main(pkg_name, versions, short_desc, homepage)
     
-    
+    # packaging-tutorial
+    pkg_name = "packaging-tutorial"
+    versions = ["v0.4.5"]
+    short_desc = 'This is an example of a private, github-hosted package. Only me can access this repo, you can try to install it with the pip command but a password is required : only people with repo access can download it.'
+    homepage = 'https://github.com/adinrayana/packaging_tutorial'
+    execute_main(pkg_name, versions, short_desc, homepage)  
