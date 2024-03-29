@@ -38,13 +38,13 @@ _While the PyPi index is public, private packages indexed here are kept private 
 
 ## Try it !
 
-Visit [astariul.github.io/github-hosted-pypi/](http://astariul.github.io/github-hosted-pypi/) and try to install packages indexed there !
+Visit [adinrayana.github.io/github-hosted-pypi/](http://adinrayana.github.io/github-hosted-pypi/) and try to install packages indexed there !
 
 ---
 
 Try to install the package `public-hello` :
 ```console
-pip install public-hello --extra-index-url https://astariul.github.io/github-hosted-pypi/
+pip install public-hello --extra-index-url https://adinrayana.github.io/github-hosted-pypi/
 ```
 
 It will also install the package `mydependency`, automatically ! 
@@ -59,24 +59,17 @@ print(hi())
 You can also install a specific version :
 
 ```console
-pip install public-hello==0.1 --extra-index-url https://astariul.github.io/github-hosted-pypi/
+pip install public-hello==0.1 --extra-index-url https://adinrayana.github.io/github-hosted-pypi/
 ```
 
 ---
-
-Now try to install the package `private-hello` :
-```console
-pip install private-hello --extra-index-url https://astariul.github.io/github-hosted-pypi/
-```
-
-_It will not work, because it's private and only me can access it !_
 
 ## Get started
 
 * Use this template and create your own repository :
 
 <p align="center">
-  <a href="https://github.com/astariul/github-hosted-pypi/generate"><img src="https://img.shields.io/badge/%20-Use%20this%20template-green?style=for-the-badge&color=347d39" alt="Use template" /></a>
+  <a href="https://github.com/adinrayana/github-hosted-pypi/generate"><img src="https://img.shields.io/badge/%20-Use%20this%20template-green?style=for-the-badge&color=347d39" alt="Use template" /></a>
 </p>
 
 * Go to `Settings` of your repository, and enable Github Page
@@ -115,7 +108,7 @@ If you wonder more specifically about supply chain attacks, check [the section a
 When running `pip install <package_name> --extra-index-url https://astariul.github.io/github-hosted-pypi/`, the following happen :
 
 1. `pip` will look at `https://pypi.org/`, the default, public index, trying to find a package with the specified name.
-2. If it can't find, it will look at `https://astariul.github.io/github-hosted-pypi/`.
+2. If it can't find, it will look at `https://adinrayana.github.io/github-hosted-pypi/`.
 3. If the package is found there, the link of the package is returned to `pip` (`git+<repo_link>@<tag>`).
 4. From this link, `pip` understand it's a Github repository and will clone the repository (at the specific tag) locally.
 5. From the cloned repository, `pip` install the package.
@@ -138,7 +131,7 @@ To do this :
 You can just specify a different name for your indexed package. Just give it a different name in the form when registering it.
 
 For example if you have a private package named `tensorflow`, when you register it in this index, you can name it `my_cool_tensorflow`, so there is no name-collision with the public package `tensorflow`.  
-Then you can install it with `pip install my_cool_tensorflow --extra-index-url https://astariul.github.io/github-hosted-pypi/`.
+Then you can install it with `pip install my_cool_tensorflow --extra-index-url https://adinrayana.github.io/github-hosted-pypi/`.
 
 Then from `python`, you can just do :
 ```python
@@ -174,7 +167,7 @@ Let's name this file `gh_auth.txt`.
 # syntax=docker/dockerfile:experimental
 FROM python:3
 
-RUN --mount=type=secret,id=gh_auth,dst=/root/.netrc pip install <package_name> --extra-index-url https://astariul.github.io/github-hosted-pypi/
+RUN --mount=type=secret,id=gh_auth,dst=/root/.netrc pip install <package_name> --extra-index-url https://adinrayana.github.io/github-hosted-pypi/
 ```
 
 **Step 3** : Build your Docker image, specifying the location of the secret created in step 1 :
@@ -200,7 +193,6 @@ While this repository makes it very convenient to have your own PyPi index, be a
 
 That's why we included automated checks into this private PyPi index. Whenever you access the page of your package, PyPi API is called, and if a package with the same name and a higher version is found, the install command is replaced with a warning.
 
-You can see a demo of such warning at [https://astariul.github.io/github-hosted-pypi/transformers/](https://astariul.github.io/github-hosted-pypi/transformers/).
 
 If you see this warning, don't install the package ! Instead, change the name of your package or upgrade the version above its public counterpart.
 
