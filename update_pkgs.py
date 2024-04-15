@@ -15,7 +15,7 @@ def execute_main(pkg_name, versions, short_desc, homepage):
     os.environ["PKG_ACTION"] = "REGISTER"
     os.environ["PKG_NAME"] = pkg_name
     os.environ["PKG_VERSION"] = versions[0]
-    os.environ["PKG_AUTHOR"] = "Nicolas Remond"
+    os.environ["PKG_AUTHOR"] = "Adi Narayana"
     os.environ["PKG_SHORT_DESC"] = short_desc
     os.environ["PKG_HOMEPAGE"] = homepage
     github_action()
