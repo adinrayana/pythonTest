@@ -45,5 +45,5 @@ if __name__ == "__main__":
     pkg_name = "IAM_Python_SDK"
     versions = ["0.1", "0.2", "0.3.dev0"]
     short_desc = 'A public github-hosted repo, with a dependency to another package.'
-    homepage = 'hhttps://github.com/hitachi-genai/platform-security-iam-python-sdk/tree/python-sdk-push'
+    homepage = 'https://github.com/hitachi-genai/platform-security-iam-python-sdk/tree/python-sdk-push'
     execute_main(pkg_name, versions, short_desc, homepage)
